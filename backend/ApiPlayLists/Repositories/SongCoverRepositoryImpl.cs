@@ -4,7 +4,7 @@ using ApiPlayLists.Entities;
 
 namespace ApiPlayLists.Repositories;
 
-public class SongCoverRepositoryImpl
+public class SongCoverRepositoryImpl : ISongCoverRepository
 {
 
     private readonly AppDbContext _dbContext;

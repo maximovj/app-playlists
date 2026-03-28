@@ -1,9 +1,13 @@
 using ApiPlayLists.AppData;
+using ApiPlayLists.Repositories;
+using ApiPlayLists.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+// Conexión a la base de datos
 builder.Services.AddDbContext<AppDbContext>(opt =>
     opt.UseNpgsql(
         builder.Configuration.GetConnectionString("DefaultConnection"),
@@ -13,8 +17,23 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
                 maxRetryCount: 10,
                 maxRetryDelay: TimeSpan.FromSeconds(5),
                 errorCodesToAdd: null);
-        }));
+        }
+    )
+);
 
+// Agregar servicios y repositorios
+builder.Services.AddScoped<IPlayListRepository, PlayListRepositoryImpl>();
+builder.Services.AddScoped<PlayListService>();
+builder.Services.AddScoped<ISongRepository, SongRepositoryImpl>();
+builder.Services.AddScoped<SongService>();
+builder.Services.AddScoped<ISongAudioRepository, SongAudioRespositoryImpl>();
+builder.Services.AddScoped<SongAudioService>();
+builder.Services.AddScoped<ISongCoverRepository, SongCoverRepositoryImpl>();
+builder.Services.AddScoped<SongCoverService>();
+builder.Services.AddScoped<IPlayListCoverRepository, PlayListCoverImpl>();
+builder.Services.AddScoped<PlayListCoverService>();
+
+builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -44,11 +63,9 @@ if (!app.Environment.IsDevelopment())
 
 app.UseCors("AllowAll");
 
-app.UseHttpsRedirection();
+app.UseAuthorization();
 
-app.MapGet("/hello-word", () => "Hola mundo desde .NET 8")
-.WithName("HelloWorld")
-.WithOpenApi();
+app.MapControllers();
 
 using (var scope = app.Services.CreateScope())
 {
