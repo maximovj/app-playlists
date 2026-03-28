@@ -1,0 +1,120 @@
+# .NET Core / ASP.NET Core
+## Ignorar archivos de compilación y dependencias
+bin/
+obj/
+packages/
+*.user
+*.suo
+*.cache
+*.vs/
+*.vscode/
+*.csproj.user
+
+# Archivos de base de datos locales
+*.mdf
+*.ldf
+*.db
+*.sqlite
+*.sqlite3
+
+# Archivos de migraciones específicos (opcional, descomenta si prefieres no subir migraciones)
+# Migrations/*.Designer.cs
+# Migrations/*.cs
+
+# Archivos de configuración de usuario
+appsettings.Development.json
+appsettings.Local.json
+*.local.json
+
+# Certificados de desarrollo
+*.pfx
+*.pem
+*.crt
+*.key
+*.cer
+
+# Archivos de logs
+logs/
+*.log
+*.txt
+
+# Archivos temporales de Visual Studio
+.vs/
+.vscode/
+TestResults/
+*.tmp
+*.temp
+
+# Archivos de cobertura de pruebas
+*.coverage
+*.coveragexml
+*.trx
+*.TestResults
+
+# Archivos de publicación
+publish/
+[Pp]ublish/
+
+# Archivos de paquetes NuGet
+*.nupkg
+*.snupkg
+packages/
+!packages.config
+
+# Archivos específicos de Entity Framework
+## Ignorar migraciones locales
+**/Migrations/*.Designer.cs
+**/Migrations/*.cs
+!**/Migrations/ApplicationDbContextModelSnapshot.cs
+
+# Archivos de usuario de Rider/IDEs
+.idea/
+*.sln.iml
+*.DotSettings.user
+*.DotSettings
+
+# Archivos de macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Archivos de Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Archivos de Linux
+.directory
+*.swp
+*.swo
+
+# Archivos de Docker
+*.dockerignore
+!Dockerfile
+
+# Variables de entorno
+.env
+.env.local
+.env.*.local
+
+# Archivos de respaldo
+*~
+*.bak
+*.orig
+*.old
+
+# Archivos de depuración
+*.ncrunchsolution
+*.ncrunchproject
+*.dotCover
+*.dotTrace
+*.vsp
+*.vspx
+*.vspscc
+*.vssscc
+*.vsidx
+
+# Archivos de Azure Functions
+local.settings.json
+*.azurefunctions
