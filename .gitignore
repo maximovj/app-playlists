@@ -1,0 +1,27 @@
+# .NET Core
+bin/
+obj/
+*.user
+*.suo
+.vs/
+.vscode/
+packages/
+TestResults/
+
+# Base de datos
+*.mdf
+*.ldf
+*.db
+*.sqlite
+
+# Configuración local
+appsettings.Development.json
+*.local.json
+
+# Logs
+logs/
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db

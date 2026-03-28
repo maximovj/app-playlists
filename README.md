@@ -11,5 +11,3 @@ Este es un proyecto para reproducir música (lista de reproducciones) usando:
 - Docker + Docker-compose
 
 
-
-
