@@ -2,12 +2,12 @@
 
 Este es un proyecto para reproducir música (lista de reproducciones) usando: 
 
-- .NET 8 + ASP.NET CORE + EF CORE 
+- .NET v8 + ASP.NET CORE v8 + EF CORE v8
 
-- Angular v20
+- Angular v21.x
 
-- PostgreSQL
+- PostgreSQL v17.x
 
-- Docker + Docker-compose
+- Docker + Docker-compose v3.x
 
 
