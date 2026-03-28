@@ -25,3 +25,30 @@ logs/
 # Sistema
 .DS_Store
 Thumbs.db
+
+# Angular + Vite + Tailwind
+node_modules/
+.pnpm-store/
+dist/
+build/
+.angular/
+.nx/
+.turbo/
+.vite/
+.env
+.env.*.local
+coverage/
+*.tsbuildinfo
+.idea/
+*.swp
+*.tmp
+*.bak
+*.orig
+*.zip
+*.tar.gz
+*.pem
+*.key
+*.crt
+package-lock.json
+yarn.lock
+!pnpm-lock.yaml
