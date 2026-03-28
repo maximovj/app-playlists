@@ -11,3 +11,13 @@ Este es un proyecto para reproducir música (lista de reproducciones) usando:
 - Docker + Docker-compose v3.x
 
 
+## Comandos para producción en docker-compose
+
+```shell
+# Ejecutar en modo producción
+$ docker compose up --build
+
+# Detener contenedores
+$ docker compose down -v
+
+```
