@@ -23,6 +23,8 @@
   <ItemGroup>
     <Folder Include="AppData\" />
     <Folder Include="Entities\" />
+    <Folder Include="Mappers\" />
+    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>
