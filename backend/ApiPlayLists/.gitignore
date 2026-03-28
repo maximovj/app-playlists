@@ -17,10 +17,6 @@ packages/
 *.sqlite
 *.sqlite3
 
-# Archivos de migraciones específicos (opcional, descomenta si prefieres no subir migraciones)
-# Migrations/*.Designer.cs
-# Migrations/*.cs
-
 # Archivos de configuración de usuario
 appsettings.Development.json
 appsettings.Local.json
@@ -61,60 +57,12 @@ publish/
 packages/
 !packages.config
 
-# Archivos específicos de Entity Framework
-## Ignorar migraciones locales
-**/Migrations/*.Designer.cs
-**/Migrations/*.cs
-!**/Migrations/ApplicationDbContextModelSnapshot.cs
+# NOTA: NO ignorar migraciones de EF Core
+# Las migraciones DEBEN estar en control de versiones
+# Migrations/*.cs - ¡Estos archivos NO se ignoran!
 
 # Archivos de usuario de Rider/IDEs
 .idea/
 *.sln.iml
 *.DotSettings.user
 *.DotSettings
-
-# Archivos de macOS
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Archivos de Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-
-# Archivos de Linux
-.directory
-*.swp
-*.swo
-
-# Archivos de Docker
-*.dockerignore
-!Dockerfile
-
-# Variables de entorno
-.env
-.env.local
-.env.*.local
-
-# Archivos de respaldo
-*~
-*.bak
-*.orig
-*.old
-
-# Archivos de depuración
-*.ncrunchsolution
-*.ncrunchproject
-*.dotCover
-*.dotTrace
-*.vsp
-*.vspx
-*.vspscc
-*.vssscc
-*.vsidx
-
-# Archivos de Azure Functions
-local.settings.json
-*.azurefunctions

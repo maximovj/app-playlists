@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <Folder Include="AppData\" />
+    <Folder Include="Entities\" />
   </ItemGroup>
 
 </Project>
