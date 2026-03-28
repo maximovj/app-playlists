@@ -21,3 +21,9 @@ $ docker compose up --build
 $ docker compose down -v
 
 ```
+
+# Vista Previas
+
+![01_preview.png](/backend/screenshots/01_preview.png)
+
+![02_preview.png](/backend/screenshots/02_preview.png)
