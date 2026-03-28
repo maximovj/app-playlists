@@ -1,0 +1,46 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:17.2
+    container_name: appplaylists-postgres
+    environment:
+      POSTGRES_DB: appplaylistsdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: ./backend/ApiPlayLists
+      dockerfile: Dockerfile
+    container_name: appplaylists-api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ConnectionStrings__DefaultConnection: Host=postgres;Port=5432;Database=appplaylistsdb;Username=postgres;Password=postgres
+    ports:
+      - "5000:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+  
+  frontend:
+    build:
+      context: ./frontend/app-playlists   # <-- donde está tu Dockerfile de Angular
+      dockerfile: Dockerfile
+    container_name: appplaylists-frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - api
+
+volumes:
+  postgres_data:
